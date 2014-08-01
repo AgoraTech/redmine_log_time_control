@@ -1,4 +1,5 @@
 require_dependency 'time_control_hooks'
+require_dependency 'log_time_validation/patches/validate_time'
 
 Redmine::Plugin.register :redmine_log_time_control do
   name 'Redmine Log Time Control plugin'

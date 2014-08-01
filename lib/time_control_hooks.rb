@@ -4,7 +4,7 @@ class TimeControlHooks < Redmine::Hook::ViewListener
     spentOn = context[:time_entry].spent_on
     dateRequire = Date.today - LogTimeControl.last.howManyDay.days
     if (spentOn < dateRequire)
-        raise "Time is inncorrect"
+       # raise "Time is inncorrect"
     end
   end  
 end
