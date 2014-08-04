@@ -44,7 +44,8 @@ module LogTimeValidation
           if(spent_on.instance_of?(String))
             spent_on = DateTime.parse(spent_on)
           end
-          dateRequire = Date.today - LogTimeControl.last.howManyDay.days
+          daysLimit = Setting.plugin_redmine_log_time_control['time_limit']
+          dateRequire = Date.today - daysLimit.to_i.days
           if (spent_on < dateRequire)
             errors.add :spent_on, :invalid
             return false
