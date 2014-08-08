@@ -47,7 +47,7 @@ module LogTimeValidation
           daysLimit = Setting.plugin_redmine_log_time_control['time_limit']
           minDate = Date.today - daysLimit.to_i.days
           if (spent_on < minDate)
-            errors.add :spent_on, :invalid
+            errors.add :spent_on, l(:spent_on_too_old)
             return false
           end
           return true
