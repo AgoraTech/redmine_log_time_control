@@ -18,35 +18,35 @@ module LogTimeValidation
       module InstanceMethods
 
         def validate_time_delete
-          logger.info "validate_time_delete"
+          logger.debug "validate_time_delete"
           spentOn = self.spent_on
           oldSpentOn = TimeEntry.find(self.id).spent_on
-          return (time_is_not_to_old(oldSpentOn) && time_is_not_to_old(spentOn))
+          return (time_is_not_too_old(oldSpentOn) && time_is_not_too_old(spentOn))
         end
 
         def validate_time_before_update
-          logger.info "validate_time_before_update"
+          logger.debug "validate_time_before_update"
           spentOn = self.spent_on
           timeEntry  = TimeEntry.find(self.id)
           oldSpentOn = timeEntry.spent_on
-          return (time_is_not_to_old(spentOn) && time_is_not_to_old(oldSpentOn))
+          return (time_is_not_too_old(spentOn) && time_is_not_too_old(oldSpentOn))
         end
         
         def validate_time_before_save
-          logger.info "validate_time_before_save"
+          logger.debug "validate_time_before_save"
           spentOn = self.spent_on
-          return time_is_not_to_old(spentOn)
+          return time_is_not_too_old(spentOn)
         end
         
 
-        def time_is_not_to_old (spent_on)
-          logger.info "time_is_not_to_old check spent_on"
+        def time_is_not_too_old (spent_on)
+          logger.debug "time_is_not_too_old check spent_on"
           if(spent_on.instance_of?(String))
             spent_on = DateTime.parse(spent_on)
           end
           daysLimit = Setting.plugin_redmine_log_time_control['time_limit']
-          dateRequire = Date.today - daysLimit.to_i.days
-          if (spent_on < dateRequire)
+          minDate = Date.today - daysLimit.to_i.days
+          if (spent_on < minDate)
             errors.add :spent_on, :invalid
             return false
           end

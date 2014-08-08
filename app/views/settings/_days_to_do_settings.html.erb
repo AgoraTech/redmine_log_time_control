@@ -1,10 +1,2 @@
-<table>
-  <tbody>
-    <tr>
-      <th>redmineLogTimeControl days limit</th>
-      <td><input type="text" id="settings_time_limit" 
-                     value="<%= settings['time_limit'] %>" 
-             name="settings[time_limit]" >
-    </tr>
-  </tbody>
-</table>
+<th><%= l(:redmine_log_time_control_title_settings)%></th>
+<td> <%= text_field_tag("settings[time_limit]",settings["time_limit"]) %>
