@@ -1,15 +1,1 @@
 <h2>redmineLogTimeControl</h2>
-
-
-<% @logTimeControls.each do |logTimeControl| %>
-  <p>
-  <%= logTimeControl.howManyDay %>
-  </p>
-<% end %>
-
-<%= form_tag({:controller => 'redmineLogTimeControl', :action => 'save'}, :method => :post) do %>
-
-<%= text_field_tag "dayslimit" %>
-
-<%= submit_tag 'Submit' %>
-<% end %>

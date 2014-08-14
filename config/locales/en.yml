@@ -1,3 +1,4 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+   redmine_log_time_control_title_settings: "Configuration days limit"
+   spent_on_too_old: "Time spent is too old"
