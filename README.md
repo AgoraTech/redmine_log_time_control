@@ -1,5 +1,8 @@
-Redmine Time Log Control
+Redmine Log Time Control
 ========================
+
+== How it work?
+Plugin adds calbacks to time_entry and checks that spend_on is not too old to update/delete , too old mean that the date(spend_on) has not to be less than currentTime - dayLimit form settings.
 
 == Installation and Setup
 
