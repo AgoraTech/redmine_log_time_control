@@ -3,7 +3,7 @@
 	<%= text_field_tag 'settings[time_limit]', @settings['time_limit'] %>
 </p>
 <p>
-	<label for="settings_limit">Time Entry day limit</label>
+	<label for="settings_limit"><%= l(:redmine_log_time_control_limit_hours_per_day)%></label>
 	<%= text_field_tag 'settings[hours_limit_per_day]', @settings['hours_limit_per_day'] %>
 	<br />
 </p></td>
