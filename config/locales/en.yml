@@ -2,3 +2,5 @@
 en:
    redmine_log_time_control_title_settings: "Configuration days limit"
    spent_on_too_old: "Time spent is too old"
+   befor_reported_hours_plus_current_hours_is_too_much: "per day you can report hours %{limit} but now you have %{reported}"
+   hours_to_much_per_day: "reported do not fall within the limit per day, limit is %{limit}"

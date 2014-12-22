@@ -1,3 +1,5 @@
 pl:
   redmine_log_time_control_title_settings: "Limit dni"
   spent_on_too_old: "Nie możesz raportować do poprzedniego raportu"
+  befor_reported_hours_plus_current_hours_is_too_much: "na jeden dzień możesz zaraportować %{limit} a masz już %{reported}"
+  hours_to_much_per_day: "Zaraportowane nie mieszczą się w limicie godzin na jeden dzień limit = %{limit}h"
